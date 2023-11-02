@@ -1,0 +1,14 @@
+version: '3'
+
+tasks:
+  desc: "start the project"
+  start:
+    cmds:
+      - npm run start
+
+  build:
+    desc: "build the project and move the production artifact into the deployment folder"
+    cmds:
+      - npm run build --production
+      - cp -Rf ./build/* ../workery-frontend-static
+      - rm -Rf ./build
