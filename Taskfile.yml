@@ -10,5 +10,5 @@ tasks:
     desc: "build the project and move the production artifact into the deployment folder"
     cmds:
       - npm run build --production
-      - cp -Rf ./build/* ../workery-frontend-static
+      - cp -Rf ./build/* ../capsule-ui-static
       - rm -Rf ./build
