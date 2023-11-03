@@ -1,4 +1,5 @@
 import { createServer, Model, Response } from "miragejs";
+import { EXECUTIVE_ROLE_ID } from "./Constants/App";
 
 
 export function createMockServer({ environment = "test" } = {}) {
@@ -11,10 +12,20 @@ export function createMockServer({ environment = "test" } = {}) {
 
 		seeds(server) {
 			server.create("user", {
-				id: 1,
+				id: "6541c860fa17876a9dd04f1f",
 				email: "admin@admin.com",
-				password: "secret",
-				name: "System Administrator",
+				password: "secret", // Simulate fake password.
+				name: "Frank Herbert",
+				first_name: "Frank",
+		        last_name: "Herbert",
+		        name: "Frank Herbert",
+		        lexical_name: "Herbert, Frank",
+		        organization_name: "",
+		        organization_type: 0,
+				role: EXECUTIVE_ROLE_ID,
+		        was_email_verified: true,
+				status: 1,
+				timezone: "America/Toronto"
 			})
 		},
 
@@ -58,9 +69,13 @@ export function createMockServer({ environment = "test" } = {}) {
 					return new Response(400, { some: 'login failed' }, {"password": "password does not match for this account"},);
 				}
 
-				return new Response(501, { some: 'login failed' }, {"programmer": "halt"},);
-
-				return { user: foundUser }
+				return new Response(200, { some: 'successful login' }, {
+					"user": foundUser,
+					"access_token": "xxx", // Simulate fake access token.
+				    "access_token_expiry_time": "2077-11-04T03:25:37.828887096Z",
+				    "refresh_token": "yyy", // Simulate fake refresh token.
+				    "refresh_token_expiry_time": "2077-11-17T03:25:37.828920762Z"
+				},);
 			})
 
 			this.get("/users", (schema) => {

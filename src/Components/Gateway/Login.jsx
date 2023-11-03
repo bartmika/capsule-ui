@@ -70,17 +70,16 @@ function Login() {
 
             // Store in persistance storage in the browser.
             setCurrentUser(response.user);
-            return; // HALT
 
             switch (response.user.role) {
                 case EXECUTIVE_ROLE_ID:
-                    setForceURL("/root/tenants");
+                    setForceURL("/admin/dashboard");
                     break;
                 case MANAGEMENT_ROLE_ID:
-                    setForceURL("/admin/dashboard");
+                    setForceURL("/501");
                     break;
                 case FRONTLINE_ROLE_ID:
-                    setForceURL("/admin/dashboard");
+                    setForceURL("/501");
                     break;
                 default:
                     setForceURL("/501");

@@ -107,7 +107,7 @@ export default props => {
                     </nav>
                     <aside class="menu p-4">
                         <p class="menu-label has-text-grey-light">
-                            Staff
+                            Pages
                         </p>
                         <ul class="menu-list">
                             <li>
@@ -115,73 +115,12 @@ export default props => {
                                     <FontAwesomeIcon className="fas" icon={faTachometer} />&nbsp;Dashboard
                                 </Link>
                             </li>
-                            <li>
-                                <Link to="/admin/tasks" class={`has-text-grey-light ${location.pathname.includes("task") && "is-active"}`}>
-                                    <FontAwesomeIcon className="fas" icon={faTasks} />&nbsp;Tasks
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to="/admin/clients" class={`has-text-grey-light ${location.pathname.includes("client") && "is-active"}`}>
-                                    <FontAwesomeIcon className="fas" icon={faUserCircle} />&nbsp;Clients
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to="/admin/associates" class={`has-text-grey-light ${location.pathname.includes("associate") && "is-active"}`}>
-                                    <FontAwesomeIcon className="fas" icon={faHardHat} />&nbsp;Associates
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to="/admin/orders" class={`has-text-grey-light ${location.pathname.includes("order") && "is-active"}`}>
-                                    <FontAwesomeIcon className="fas" icon={faWrench} />&nbsp;Work Orders
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to="/admin/skill-sets" class={`has-text-grey-light ${location.pathname.includes("skill-set") && "is-active"}`}>
-                                    <FontAwesomeIcon className="fas" icon={faToolbox} />&nbsp;Skill Sets
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to="/admin/tags" class={`has-text-grey-light ${location.pathname.includes("tag") && "is-active"}`}>
-                                    <FontAwesomeIcon className="fas" icon={faTags} />&nbsp;Tags
-                                </Link>
-                            </li>
-
-                        </ul>
-
-                        <p class="menu-label has-text-grey-light">
-                            Administration
-                        </p>
-                        <ul class="menu-list">
-                            <li>
-                                <a class="has-text-grey-light">
-                                    <FontAwesomeIcon className="fas" icon={faCreditCard} />&nbsp;Financials
-                                </a>
-                                <a class="has-text-grey-light">
-                                    <FontAwesomeIcon className="fas" icon={faChartBar} />&nbsp;Reports
-                                </a>
-                                <a class="has-text-grey-light">
-                                    <FontAwesomeIcon className="fas" icon={faUserTie} />&nbsp;Staff
-                                </a>
-                                <a class="has-text-grey-light">
-                                    <FontAwesomeIcon className="fas" icon={faCogs} />&nbsp;Org. Settings
-                                </a>
-                            </li>
                         </ul>
 
                         <p class="menu-label has-text-grey-light">
                             Account
                         </p>
                         <ul class="menu-list">
-                            <li>
-                                <Link to="/admin/help" class={`has-text-grey-light ${location.pathname.includes("help") && "is-active"}`}>
-                                    <FontAwesomeIcon className="fas" icon={faQuestionCircle} />&nbsp;Help
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to="/profile" class={`has-text-grey-light ${location.pathname.includes("profile") && "is-active"}`}>
-                                    <FontAwesomeIcon className="fas" icon={faUser} />&nbsp;My Profile
-                                </Link>
-                            </li>
                             <li>
                                 <a onClick={(e)=>setShowLogoutWarning(true)} class={`has-text-grey-light ${location.pathname.includes("logout") && "is-active"}`} >
                                     <FontAwesomeIcon className="fas" icon={faSignOut} />&nbsp;Sign Off
@@ -197,84 +136,10 @@ export default props => {
                 --------
             */}
             {currentUser.role === 2 &&
-                <div className={`column is-one-fifth has-background-black ${onHamburgerClicked ? '' : 'is-hidden'}`}>
-                    <nav class="level is-hidden-mobile">
-                        <div class="level-item has-text-centered">
-                            <figure class='image'>
-                                <img src='/img/compressed-logo.png' style={{maxWidth:"200px"}} />
-                            </figure>
-                        </div>
-                    </nav>
-                    <aside class="menu p-4">
-                        <p class="menu-label has-text-grey-light">
-                            Staff
-                        </p>
-                        <ul class="menu-list">
-                            <li>
-                                <a href="/dashboard" class={`has-text-grey-light ${location.pathname.includes("dashboard") && "is-active"}`}>
-                                    <FontAwesomeIcon className="fas" icon={faTachometer} />&nbsp;Dashboard
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="/clients" class={`has-text-grey-light ${location.pathname.includes("client") && "is-active"}`}>
-                                    <FontAwesomeIcon className="fas" icon={faUsers} />&nbsp;Client
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/submissions" class={`has-text-grey-light ${(location.pathname.includes("submissions") && !location.pathname.includes("comic") && !location.pathname.includes("card")) && "is-active"}`}>
-                                    <FontAwesomeIcon className="fas" icon={faTasks} />&nbsp;Submissions
-                                </a>
-                                <ul>
-                                    <li>
-                                        <a href="/submissions/comics" class={`has-text-grey-light ${location.pathname.includes("submissions/comic") && "is-active"}`}>
-                                            <FontAwesomeIcon className="fas" icon={faBook} />&nbsp;Comics
-                                        </a>
-                                    </li>
-                                    {/*
-                                    <li>
-                                        <a href="/submissions/cards" class={`has-text-grey-light ${location.pathname.includes("card") && "is-active"}`}>
-                                            <FontAwesomeIcon className="fas" icon={faTachometer} />&nbsp;Cards
-                                        </a>
-                                    </li>
-                                    */}
-                                </ul>
-                            </li>
-                        </ul>
-
-                        <p class="menu-label has-text-grey-light">
-                            System
-                        </p>
-                        <ul class="menu-list">
-                            <li>
-                                <a href="/registry" class={`has-text-grey-light ${location.pathname.includes("registry") && "is-active"}`}>
-                                    <FontAwesomeIcon className="fas" icon={faBarcode} />&nbsp;Registry
-                                </a>
-                            </li>
-                        </ul>
-
-                        <p class="menu-label has-text-grey-light">
-                            Account
-                        </p>
-                        <ul class="menu-list">
-                            <li>
-                                <a href={`/account`} class={`has-text-grey-light ${location.pathname.includes("account") && "is-active"}`}>
-                                    <FontAwesomeIcon className="fas" icon={faUserCircle} />&nbsp;Account
-                                </a>
-                            </li>
-                            <li>
-                                <a href={`/organization`} class={`has-text-grey-light ${location.pathname.includes("organization") && "is-active"}`}>
-                                    <FontAwesomeIcon className="fas" icon={faBuilding} />&nbsp;Organization
-                                </a>
-                            </li>
-                            <li>
-                                <a onClick={(e)=>setShowLogoutWarning(true)} class={`has-text-grey-light ${location.pathname.includes("logout") && "is-active"}`} >
-                                    <FontAwesomeIcon className="fas" icon={faSignOut} />&nbsp;Sign Off
-                                </a>
-                            </li>
-                        </ul>
-                    </aside>
-                </div>
+                <>
+                    {/* You can load up distinct side bar menu items based on this user's role. */}
+                    {/* Write your code here ... */}
+                </>
             }
         </>
     );
