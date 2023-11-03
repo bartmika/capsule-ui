@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, Navigate, useSearchParams } from "react-router-dom";
 import Scroll from 'react-scroll';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowRight, faEnvelope, faKey, faTriangleExclamation } from '@fortawesome/free-solid-svg-icons';
+import { faBullhorn, faArrowRight, faEnvelope, faKey, faTriangleExclamation } from '@fortawesome/free-solid-svg-icons';
 import { useRecoilState } from 'recoil';
 
 import FormErrorBox from "../Reusable/FormErrorBox";
@@ -70,6 +70,7 @@ function Login() {
 
             // Store in persistance storage in the browser.
             setCurrentUser(response.user);
+            return; // HALT
 
             switch (response.user.role) {
                 case EXECUTIVE_ROLE_ID:
@@ -90,6 +91,7 @@ function Login() {
 
     function onLoginError(apiErr) {
         console.log("onLoginError: Starting...");
+        console.log("onLoginError:", apiErr);
         setErrors(apiErr);
 
         // The following code will cause the screen to scroll to the top of
@@ -124,16 +126,16 @@ function Login() {
     function onButtonClick(e) {
         var newErrors = {};
         var newValidation = {};
-        if (email === undefined || email === null || email === "") {
-            newErrors["email"] = "value is missing";
-        } else {
-            newValidation["email"] = true
-        }
-        if (password === undefined || password === null || password === "") {
-            newErrors["password"] = "value is missing";
-        } else {
-            newValidation["password"] = true
-        }
+        // if (email === undefined || email === null || email === "") {
+        //     newErrors["email"] = "value is missing";
+        // } else {
+        //     newValidation["email"] = true
+        // }
+        // if (password === undefined || password === null || password === "") {
+        //     newErrors["password"] = "value is missing";
+        // } else {
+        //     newValidation["password"] = true
+        // }
 
         /// Save to state.
         setErrors(newErrors);
@@ -205,6 +207,13 @@ function Login() {
                             <div class="container">
                                 <div class="columns is-centered">
                                     <div class="column is-one-third-tablet">
+                                        {/* Friendly message letting the user know the login credentials. */}
+                                        <article class="message is-info">
+                                            <div class="message-body">
+                                                <FontAwesomeIcon className="fas" icon={faBullhorn} />&nbsp;Log in using the email <i>"admin@admin.com"</i> and the password as <i>"secret"</i>.
+                                            </div>
+                                        </article>
+
                                         <div class="box is-rounded">
                                             {/* Start Logo */}
                                             <nav class="level">

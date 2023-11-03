@@ -19,6 +19,7 @@ import NotImplementedError from "./Components/Misc/NotImplementedError";
 import ForgotPassword from "./Components/Gateway/ForgotPassword";
 import PasswordReset from "./Components/Gateway/PasswordReset";
 
+
 function AppRoute() {
     return (
         <div class="is-widescreen is-size-5-desktop is-size-6-tablet is-size-7-mobile">
