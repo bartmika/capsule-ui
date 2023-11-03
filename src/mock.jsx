@@ -13,7 +13,7 @@ export function createMockServer({ environment = "test" } = {}) {
 		seeds(server) {
 			server.create("user", {
 				id: "6541c860fa17876a9dd04f1f",
-				email: "admin@admin.com",
+				email: "demo@capsule-ui.com",
 				password: "secret", // Simulate fake password.
 				name: "Frank Herbert",
 				first_name: "Frank",

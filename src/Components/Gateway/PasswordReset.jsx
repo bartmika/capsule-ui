@@ -248,7 +248,7 @@ function PasswordReset() {
                                         {/* End box */}
 
                                         <div className="has-text-centered">
-                                            <p>© 2023 Your Company, Inc.</p>
+                                            <p>© 2023 Capsule UI</p>
                                         </div>
                                         {/* End suppoert text. */}
 

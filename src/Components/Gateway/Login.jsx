@@ -209,7 +209,7 @@ function Login() {
                                         {/* Friendly message letting the user know the login credentials. */}
                                         <article class="message is-info">
                                             <div class="message-body">
-                                                <FontAwesomeIcon className="fas" icon={faBullhorn} />&nbsp;Log in using the email <i>"admin@admin.com"</i> and the password as <i>"secret"</i>.
+                                                <FontAwesomeIcon className="fas" icon={faBullhorn} />&nbsp;Log in using the email <i>"demo@capsule-ui.com "</i> and the password as <i>"secret"</i>.
                                             </div>
                                         </article>
 
@@ -287,7 +287,7 @@ function Login() {
                                         {/* End box */}
 
                                         <div className="has-text-centered">
-                                            <p>© 2023 Your Company, Inc.</p>
+                                            <p>© 2023 Capsule UI</p>
                                         </div>
                                         {/* End suppoert text. */}
 
