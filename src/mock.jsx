@@ -1,5 +1,11 @@
-import { createServer, Model, Response } from "miragejs";
+import {
+	createServer,
+	Model,
+	Response,
+	RestSerializer,
+} from "miragejs";
 import { EXECUTIVE_ROLE_ID } from "./Constants/App";
+import { decamelizeKeys } from 'humps';
 
 
 export function createMockServer({ environment = "test" } = {}) {
@@ -7,10 +13,24 @@ export function createMockServer({ environment = "test" } = {}) {
 		environment,
 
 		models: {
-			user: Model
+			user: Model,
+			client: Model,
+		},
+
+		serializers: {
+			client: RestSerializer.extend({
+				keyForAttribute(key) {
+					// Convert camelCase to snake_case
+					return decamelizeKeys(key);
+				},
+			}),
 		},
 
 		seeds(server) {
+			//----------------------------------------------------------------//
+            //                      LOGIN API ENDPOINT                        //
+			//----------------------------------------------------------------//
+
 			server.create("user", {
 				id: "6541c860fa17876a9dd04f1f",
 				email: "demo@capsule-ui.com",
@@ -26,7 +46,42 @@ export function createMockServer({ environment = "test" } = {}) {
 		        was_email_verified: true,
 				status: 1,
 				timezone: "America/Toronto"
-			})
+			});
+
+			//----------------------------------------------------------------//
+            //                      CLIENTS API ENDPOINT                      //
+			//----------------------------------------------------------------//
+
+			server.create("client", {
+				id: "6541c860fa17876a9dd04f1f",
+				email: "frank@capsule-ui.com",
+				name: "Frank Herbert",
+				first_name: "Frank",
+		        last_name: "Herbert",
+		        name: "Frank Herbert",
+		        lexical_name: "Herbert, Frank",
+				phone: "+112345678900"
+			});
+			server.create("client", {
+				id: "6541c860fa17876a9dd04f1a",
+				email: "brian@capsule-ui.com",
+				name: "Brian Herbert",
+				first_name: "Brian",
+		        last_name: "Herbert",
+		        name: "Brian Herbert",
+		        lexical_name: "Herbert, Brian",
+				phone: "+112345678900"
+			});
+			server.create("client", {
+				id: "6541c860fa17876a9dd04f1b",
+				email: "zoe@capsule-ui.com",
+				name: "Zoe Herbert",
+				first_name: "Zoe",
+		        last_name: "Herbert",
+		        name: "Zoe Herbert",
+		        lexical_name: "Herbert, Zoe",
+				phone: "+112345678900"
+			});
 		},
 
 		routes() {
@@ -69,7 +124,7 @@ export function createMockServer({ environment = "test" } = {}) {
 					return new Response(400, { some: 'login failed' }, {"password": "password does not match for this account"},);
 				}
 
-				return new Response(200, { some: 'successful login' }, {
+				return new Response(200, {"Content-Type" : "application/json",}, {
 					"user": foundUser,
 					"access_token": "xxx", // Simulate fake access token.
 				    "access_token_expiry_time": "2077-11-04T03:25:37.828887096Z",
@@ -78,11 +133,29 @@ export function createMockServer({ environment = "test" } = {}) {
 				},);
 			})
 
-			this.get("/users", (schema) => {
-				return schema.users.all()
-			})
+			//----------------------------------------------------------------//
+            //                      CLIENTS API ENDPOINT                      //
+			//----------------------------------------------------------------//
+			this.get("/clients", (schema) => {
+				const clients = schema.clients.all();
+
+				return {
+			        results: clients.models.map((client) => ({
+			            id: client.id,
+			            email: client.email,
+			            first_name: client.first_name,
+			            last_name: client.last_name,
+			            name: client.name,
+			            phone: client.phone,
+			        })),
+			        has_next_page: true, // Assuming this is always false in this example
+			        next_cursor: '6541c860fa17876a9dd04f1b',
+			    };
+			});
 		},
 	})
+
+	server.logging = true; // For debugging purposes only.
 
 	return server
 }

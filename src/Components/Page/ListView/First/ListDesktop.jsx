@@ -7,7 +7,7 @@ import { useRecoilState } from 'recoil';
 
 import PhoneTextFormatter from "../../../Reusable/EveryPage/PhoneTextFormatter";
 import EmailTextFormatter from "../../../Reusable/EveryPage/EmailTextFormatter";
-import { PAGE_SIZE_OPTIONS, USER_ROLES } from "../../../../Constants/FieldOptions";
+import { PAGE_SIZE_OPTIONS } from "../../../../Constants/FieldOptions";
 
 
 function FirstListDesktop(props) {
@@ -17,8 +17,7 @@ function FirstListDesktop(props) {
         pageSize,
         previousCursors,
         onPreviousClicked,
-        onNextClicked,
-        onSelectClientForDeletion
+        onNextClicked
     } = props;
     return (
         <div class="b-table">
@@ -31,7 +30,6 @@ function FirstListDesktop(props) {
                             <th>Last Name</th>
                             <th>Phone</th>
                             <th>Email</th>
-                            <th>Organization</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -53,10 +51,9 @@ function FirstListDesktop(props) {
                                         : <>-</>
                                     }
                                 </td>
-                                <td data-label="Organization">{datum.organizationName}</td>
                                 <td class="is-actions-cell">
                                     <div class="buttons is-right">
-                                        <Link to={`/admin/client/${datum.id}`} class="is-small">
+                                        <Link to={`/501`} class="is-small">
                                             View&nbsp;<FontAwesomeIcon className="mdi" icon={faChevronRight} />
                                         </Link>
                                     </div>
