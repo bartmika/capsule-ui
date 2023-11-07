@@ -42,3 +42,27 @@ export const currentUserState = atom({
   default: null,
   effects_UNSTABLE: [persistAtom],
 });
+
+export const clientFilterJoinDatetState = atom({
+    key: 'clientFilterJoinDatetState',
+    default: null,
+    effects_UNSTABLE: [persistAtom],
+});
+
+export const clientFilterStatusState = atom({
+    key: 'clientFilterStatusState',
+    default: 1, // 1=active
+    effects_UNSTABLE: [persistAtom],
+});
+
+export const clientFilterTypeState = atom({
+    key: 'clientFilterTypeState',
+    default: 0,
+    effects_UNSTABLE: [persistAtom],
+});
+
+export const clientFilterSortState = atom({
+    key: 'clientFilterSortState',
+    default: "last_name,ASC",
+    effects_UNSTABLE: [persistAtom],
+});

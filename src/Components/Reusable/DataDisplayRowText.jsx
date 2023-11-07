@@ -33,6 +33,13 @@ function DataDisplayRowText(props) {
                         {type === "currency" &&
                             <>${value}</>
                         }
+                        {type === "textlist" &&
+                            <>
+                            {value && value.map(function(datum, i){
+                                return <div class="pb-3" key={i}><FontAwesomeIcon className="fas" icon={faCircle} />&nbsp;{datum}</div>
+                            })}
+                            </>
+                        }
                         </>
                         :
                         "-"

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHardHat, faUser, faQuestionCircle, faCogs, faUserTie, faChartBar, faCreditCard, faTags, faToolbox, faWrench, faBars, faBook, faRightFromBracket, faTachometer, faTasks, faSignOut, faUserCircle, faUsers, faBuilding, faBarcode } from '@fortawesome/free-solid-svg-icons'
+import { faTable, faRocket, faHardHat, faUser, faQuestionCircle, faCogs, faUserTie, faChartBar, faCreditCard, faTags, faToolbox, faWrench, faBars, faBook, faRightFromBracket, faTachometer, faTasks, faSignOut, faUserCircle, faUsers, faBuilding, faBarcode } from '@fortawesome/free-solid-svg-icons'
 import { useRecoilState } from 'recoil';
 
 import { onHamburgerClickedState, currentUserState } from "../../AppState";
@@ -111,8 +111,11 @@ export default props => {
                         </p>
                         <ul class="menu-list">
                             <li>
-                                <Link to="/admin/dashboard" class={`has-text-grey-light ${location.pathname.includes("dashboard") && "is-active"}`}>
-                                    <FontAwesomeIcon className="fas" icon={faTachometer} />&nbsp;Dashboard
+                                <Link to="/page/launchpad" class={`has-text-grey-light ${location.pathname.includes("launchpad") && "is-active"}`}>
+                                    <FontAwesomeIcon className="fas" icon={faRocket} />&nbsp;Launchpad
+                                </Link>
+                                <Link to="/page/list/first" class={`has-text-grey-light ${location.pathname.includes("list") && "is-active"}`}>
+                                    <FontAwesomeIcon className="fas" icon={faTable} />&nbsp;List
                                 </Link>
                             </li>
                         </ul>

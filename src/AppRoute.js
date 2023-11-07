@@ -8,7 +8,8 @@ import {
 } from "react-router-dom";
 import { RecoilRoot } from 'recoil';
 
-import AdminDashboardLaunchpad from "./Components/Admin/Dashboard/Launchpad";
+import FirstList from "./Components/Page/ListView/First/List";
+import DashboardLaunchpad from "./Components/Page/Dashboard/Launchpad";
 import LogoutRedirector from "./Components/Gateway/LogoutRedirector";
 import Login from "./Components/Gateway/Login";
 import Index from "./Components/Gateway/Index";
@@ -41,7 +42,8 @@ function AppRoute() {
                             <section class="main-content columns is-fullheight">
                                 <Routes>
                                     {/* Admin related pages. */}
-                                    <Route exact path="/admin/dashboard" element={<AdminDashboardLaunchpad/>}/>
+                                    <Route exact path="/page/list/first" element={<FirstList/>}/>
+                                    <Route exact path="/page/launchpad" element={<DashboardLaunchpad/>}/>
                                     {/* Gateway related pages. */}
                                     <Route exact path="/login" element={<Login/>}/>
                                     <Route exact path="/logout" element={<LogoutRedirector/>}/>

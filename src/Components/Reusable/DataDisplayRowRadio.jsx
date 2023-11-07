@@ -1,5 +1,26 @@
+// Version 1.0.0
 import React from "react";
 
+/*
+    // USAGE EXAMPLE
+
+    // STEP 1: Create our state
+    const [gender, setGender] = useState("");
+
+    // ...
+
+    // STEP 2: Use our component
+    <DataDisplayRowRadio
+        label="Gender"
+        value={datum.gender}
+        opt1Value="Male"
+        opt1Label="Male"
+        opt2Value="Female"
+        opt2Label="Female"
+        opt3Value="Other"
+        opt3Label="Other"
+    />
+*/
 function DataDisplayRowRadio(props) {
     const {
         label,          // The text to display the user.

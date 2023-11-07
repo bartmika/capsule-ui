@@ -1,8 +1,30 @@
+// Version 1.0.0
 import React from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
-function FormDateField({ label, name, placeholder, value, type="text", errorText, validationText, helpText, onChange, maxWidth, disabled=false, withPortal=true, filterDate=null, minDate=null, monthsShown=1 }) {
+/*
+    // EXAMPLE USAGE:
+
+    // Step 1: Create your state.
+    const [birthDate, setBirthDate] = useState(null);
+
+    // ...
+
+    // Step 2: Use this componen.
+    <FormDateField
+        label="Birth Date"
+        name="birthDate"
+        placeholder="Text input"
+        value={birthDate}
+        helpText=""
+        onChange={(date)=>setBirthDate(date)}
+        errorText={errors && errors.birthDate}
+        isRequired={true}
+        maxWidth="180px"
+    />
+ */
+function FormDateField({ label, name, placeholder, value, type="text", errorText, validationText, helpText, onChange, maxWidth, disabled=false, withPortal=true, filterDate=null, minDate=null, maxDate=null, monthsShown=1 }) {
     let dt = null;
     if (value === undefined || value === null || value === "") {
         // Do nothing...
@@ -36,6 +58,7 @@ function FormDateField({ label, name, placeholder, value, type="text", errorText
                          portalId={name}
                        filterDate={filterDate}
                           minDate={minDate}
+                          maxDate={maxDate}
                       monthsShown={monthsShown}
                      onChange={(date) => onChange(date)}
                        dateFormat="MM/d/yyyy">
