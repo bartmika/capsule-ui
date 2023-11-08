@@ -53,7 +53,7 @@ function FirstListDesktop(props) {
                                 </td>
                                 <td class="is-actions-cell">
                                     <div class="buttons is-right">
-                                        <Link to={`/501`} class="is-small">
+                                        <Link to={`/page/detail/first/${datum.id}`} class="is-small">
                                             View&nbsp;<FontAwesomeIcon className="mdi" icon={faChevronRight} />
                                         </Link>
                                     </div>

@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import { RecoilRoot } from 'recoil';
 
+import FirstDetail from "./Components/Page/DetailView/First/Detail";
 import SecondList from "./Components/Page/ListView/Second/List";
 import FirstList from "./Components/Page/ListView/First/List";
 import DashboardLaunchpad from "./Components/Page/Dashboard/Launchpad";
@@ -42,7 +43,8 @@ function AppRoute() {
                         <div class="column">
                             <section class="main-content columns is-fullheight">
                                 <Routes>
-                                    {/* Admin related pages. */}
+                                    {/* Pages. */}
+                                    <Route exact path="/page/detail/first/:id" element={<FirstDetail/>}/>
                                     <Route exact path="/page/list/second" element={<SecondList/>}/>
                                     <Route exact path="/page/list/first" element={<FirstList/>}/>
                                     <Route exact path="/page/launchpad" element={<DashboardLaunchpad/>}/>

@@ -3,6 +3,7 @@ import { camelizeKeys, decamelizeKeys, decamelize } from 'humps';
 
 import {
     CAPSULE_CLIENTS_API_ENDPOINT,
+    CAPSULE_CLIENT_API_ENDPOINT
 } from "../Constants/API";
 
 
@@ -39,6 +40,30 @@ export function getClientListAPI(filtersMap=new Map(), onSuccessCallback, onErro
             )
         }
         // console.log("getClientListAPI | post-fix | results:", data);
+
+        // Return the callback data.
+        onSuccessCallback(data);
+    }).catch( (exception) => {
+        let errors = camelizeKeys(exception);
+        onErrorCallback(errors);
+    }).then(onDoneCallback);
+}
+
+export function getClientDetailAPI(clientID, onSuccessCallback, onErrorCallback, onDoneCallback, onUnauthorizedCallback) {
+    const axios = getCustomAxios(onUnauthorizedCallback);
+    axios.get(CAPSULE_CLIENT_API_ENDPOINT.replace("{id}", clientID)).then((successResponse) => {
+        const responseData = successResponse.data;
+
+        console.log("responseData:", responseData);
+
+        // Snake-case from API to camel-case for React.
+        let data = camelizeKeys(responseData);
+
+        // BUGFIX
+        data.howDidYouHearAboutUsID = data.howDidYouHearAboutUsId;
+
+        // For debugging purposeso pnly.
+        console.log(data);
 
         // Return the callback data.
         onSuccessCallback(data);

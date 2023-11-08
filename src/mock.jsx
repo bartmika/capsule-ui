@@ -152,6 +152,13 @@ export function createMockServer({ environment = "test" } = {}) {
 			        next_cursor: '6541c860fa17876a9dd04f1b',
 			    };
 			});
+			this.get("/client/:id", (schema, request) => {
+				let id = request.params.id;
+				console.log("id:", id);
+				let data = schema.clients.find(id)
+				console.log("data:", data);
+			    return new Response(200, {"Content-Type" : "application/json",}, data.attrs)
+			});
 		},
 	})
 

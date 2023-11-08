@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faRocket, faTable, faTasks, faGauge, faArrowRight, faUsers, faBarcode } from '@fortawesome/free-solid-svg-icons';
+import { faFileWord, faEye, faRocket, faTable, faTasks, faGauge, faArrowRight, faUsers, faBarcode } from '@fortawesome/free-solid-svg-icons';
 
 
 function DashboardLaunchpad() {
@@ -90,6 +90,41 @@ function DashboardLaunchpad() {
                                     <br />
                                     <br />
                                     <Link to={"/page/list/second"}>Second&nbsp;<FontAwesomeIcon className="fas" icon={faArrowRight} /></Link>
+                                </p>
+                            </div>
+                        </section>
+
+                        <section class="hero is-medium is-link">
+                            <div class="hero-body">
+                                <p class="title">
+                                    <FontAwesomeIcon className="fas" icon={faEye} />&nbsp;Detail Views
+                                </p>
+                                <p class="subtitle">
+                                    Select from any of the following designs:
+                                    <br />
+                                    <br />
+                                    <Link to={`/page/detail/first/6541c860fa17876a9dd04f1f`}>First&nbsp;<FontAwesomeIcon className="fas" icon={faArrowRight} /></Link>
+                                    <br />
+                                    <br />
+                                    <Link hidden={true} to={"/page/list/second"}>Second&nbsp;<FontAwesomeIcon className="fas" icon={faArrowRight} /></Link>
+                                </p>
+                            </div>
+                        </section>
+
+                        <section class="hero is-medium is-link">
+                            <div class="hero-body">
+                                <p class="title">
+                                    <FontAwesomeIcon className="fas" icon={faFileWord} />&nbsp;Forms
+                                </p>
+                                <p class="subtitle">
+                                    Select from any of the following designs:
+                                    <br />
+                                    <br />
+                                    <i>Coming soon</i>
+                                    <Link hidden={true} to={"/page/list/first"}>First&nbsp;<FontAwesomeIcon className="fas" icon={faArrowRight} /></Link>
+                                    <br />
+                                    <br />
+                                    <Link hidden={true} to={"/page/list/second"}>Second&nbsp;<FontAwesomeIcon className="fas" icon={faArrowRight} /></Link>
                                 </p>
                             </div>
                         </section>

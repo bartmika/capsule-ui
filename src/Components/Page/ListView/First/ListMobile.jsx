@@ -39,7 +39,7 @@ function FirstListMobile(props) {
                     }
                     <br />
                     <br />
-                    <Link to={`/501`} class="button is-primary is-fullwidth-mobile" type="button">
+                    <Link to={`/page/detail/first/${datum.id}`} class="button is-primary is-fullwidth-mobile" type="button">
                         View&nbsp;<FontAwesomeIcon className="mdi" icon={faChevronRight} />
                     </Link>
 
