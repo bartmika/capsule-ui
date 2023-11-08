@@ -66,3 +66,22 @@ export const clientFilterSortState = atom({
     default: "last_name,ASC",
     effects_UNSTABLE: [persistAtom],
 });
+
+// Control whether to show filters for the list.
+export const clientFilterShowState = atom({
+    key: 'clientFilterShowState',
+    default: false,
+    effects_UNSTABLE: [persistAtom],
+});
+
+export const clientFilterTemporarySearchTextState = atom({
+    key: 'clientFilterTemporarySearchTextState',
+    default: "",
+    effects_UNSTABLE: [persistAtom],
+});
+
+export const clientFilterActualSearchTextState = atom({
+    key: 'clientFilterActualSearchTextState',
+    default: "",
+    effects_UNSTABLE: [persistAtom],
+});

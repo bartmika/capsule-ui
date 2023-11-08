@@ -87,6 +87,9 @@ function DashboardLaunchpad() {
                                     <br />
                                     <br />
                                     <Link to={"/page/list/first"}>First&nbsp;<FontAwesomeIcon className="fas" icon={faArrowRight} /></Link>
+                                    <br />
+                                    <br />
+                                    <Link to={"/page/list/second"}>Second&nbsp;<FontAwesomeIcon className="fas" icon={faArrowRight} /></Link>
                                 </p>
                             </div>
                         </section>
