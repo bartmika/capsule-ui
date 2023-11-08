@@ -60,7 +60,12 @@ export function createMockServer({ environment = "test" } = {}) {
 		        last_name: "Herbert",
 		        name: "Frank Herbert",
 		        lexical_name: "Herbert, Frank",
-				phone: "+112345678900"
+				phone: "+112345678900",
+				country: "Canada",
+                region: "Ontario",
+			    city: "London",
+				birth_date: "1930-01-01T00:00:00Z",
+                join_date: "2020-10-20T00:00:00Z",
 			});
 			server.create("client", {
 				id: "6541c860fa17876a9dd04f1a",
@@ -70,7 +75,12 @@ export function createMockServer({ environment = "test" } = {}) {
 		        last_name: "Herbert",
 		        name: "Brian Herbert",
 		        lexical_name: "Herbert, Brian",
-				phone: "+112345678900"
+				phone: "+112345678900",
+				country: "Canada",
+                region: "Ontario",
+			    city: "London",
+				birth_date: "1980-01-01T00:00:00Z",
+                join_date: "2020-10-20T00:00:00Z",
 			});
 			server.create("client", {
 				id: "6541c860fa17876a9dd04f1b",
@@ -80,7 +90,12 @@ export function createMockServer({ environment = "test" } = {}) {
 		        last_name: "Herbert",
 		        name: "Zoe Herbert",
 		        lexical_name: "Herbert, Zoe",
-				phone: "+112345678900"
+				phone: "+112345678900",
+				country: "Canada",
+                region: "Ontario",
+			    city: "London",
+				birth_date: "1980-01-01T00:00:00Z",
+                join_date: "2020-10-20T00:00:00Z",
 			});
 		},
 

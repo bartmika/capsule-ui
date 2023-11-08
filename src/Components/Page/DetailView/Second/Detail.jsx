@@ -21,10 +21,7 @@ import {
 import ErrorBox from "../../../Reusable/EveryPage/ErrorBox";
 import AlertBanner from "../../../Reusable/EveryPage/AlertBanner";
 import PageLoadingContent from "../../../Reusable/EveryPage/PageLoadingContent";
-import FormInputFieldWithButton from  "../../../Reusable/FormInputFieldWithButton";
-import FormSelectField from  "../../../Reusable/FormSelectField";
-import FormDateField from "../../../Reusable/FormDateField";
-import DateTextFormatter from "../../../Reusable/EveryPage/DateTextFormatter";
+import DataDisplayRowText from "../../../Reusable/DetailPage/Text";
 import { USER_ROLES,
     USER_STATUS_LIST_OPTIONS,
     USER_ROLE_LIST_OPTIONS,
@@ -38,7 +35,7 @@ import {
 } from "../../../../Constants/App";
 
 
-function FirstDetail() {
+function SecondDetail() {
 
     ////
     //// URL Parameters.
@@ -131,7 +128,7 @@ function FirstDetail() {
                     <nav class="breadcrumb has-background-light p-4 is-hidden-touch" aria-label="breadcrumbs">
                         <ul>
                             <li class=""><Link to="/page/launchpad" aria-current="page"><FontAwesomeIcon className="fas" icon={faGauge} />&nbsp;Dashboard</Link></li>
-                            <li class=""><Link to="/page/list/first" aria-current="page"><FontAwesomeIcon className="fas" icon={faUserCircle} />&nbsp;Clients</Link></li>
+                            <li class=""><Link to="/page/list/second" aria-current="page"><FontAwesomeIcon className="fas" icon={faUserCircle} />&nbsp;Clients</Link></li>
                             <li class="is-active"><Link aria-current="page"><FontAwesomeIcon className="fas" icon={faEye} />&nbsp;Detail</Link></li>
                         </ul>
                     </nav>
@@ -139,7 +136,7 @@ function FirstDetail() {
                     {/* Mobile Breadcrumbs */}
                     <nav class="breadcrumb has-background-light p-4 is-hidden-desktop" aria-label="breadcrumbs">
                         <ul>
-                            <li class=""><Link to="/page/list/first" aria-current="page"><FontAwesomeIcon className="fas" icon={faArrowLeft} />&nbsp;Back to Clients</Link></li>
+                            <li class=""><Link to="/page/list/second" aria-current="page"><FontAwesomeIcon className="fas" icon={faArrowLeft} />&nbsp;Back to Clients</Link></li>
                         </ul>
                     </nav>
 
@@ -206,40 +203,38 @@ function FirstDetail() {
                                         Peronsal Information Table
                                         ##########################
                                     */}
-                                    <table class="table is-fullwidth">
-                                        <thead>
-                                            <tr class="has-background-black">
-                                                <th class="has-text-white" colSpan="2">
-                                                    Personal Information
-                                                </th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <th class="has-background-light" style={{width: "30%"}}>First Name:</th>
-                                                <td>{client.firstName}</td>
-                                            </tr>
-                                            <tr>
-                                    			<th class="has-background-light" style={{width: "30%"}}>Last Name:</th>
-                                    			<td>{client.lastName}</td>
-                                    		</tr>
-                                            <tr>
-                                    			<th class="has-background-light" style={{width: "30%"}}>Date of Birth:</th>
-                                    			<td>
-                                                    {client.birthDate
-                                                        ?
-                                                        <DateTextFormatter value={client.birthDate} />
-                                                        :
-                                                        <>-</>
-                                                    }
-                                                </td>
-                                    		</tr>
-                                        </tbody>
-                                    </table>
+                                    <DataDisplayRowText
+                                        label="First Name"
+                                        value={client.firstName}
+                                        helpText=""
+                                    />
+                                    <DataDisplayRowText
+                                        label="Last Name"
+                                        value={client.lastName}
+                                        helpText=""
+                                    />
+                                    <DataDisplayRowText
+                                        label="Date of Birth"
+                                        value={client.birthDate}
+                                        type="date"
+                                        helpText=""
+                                    />
+                                    <DataDisplayRowText
+                                        label="Email"
+                                        value={client.email}
+                                        type="email"
+                                        helpText=""
+                                    />
+                                    <DataDisplayRowText
+                                        label="Phone"
+                                        value={client.phone}
+                                        type="phone"
+                                        helpText=""
+                                    />
 
                                     <div class="columns pt-5">
                                         <div class="column is-half">
-                                            <Link class="button is-fullwidth-mobile" to={`/page/list/first`}><FontAwesomeIcon className="fas" icon={faArrowLeft} />&nbsp;Back to Clients</Link>
+                                            <Link class="button is-fullwidth-mobile" to={`/page/list/second`}><FontAwesomeIcon className="fas" icon={faArrowLeft} />&nbsp;Back to Clients</Link>
                                         </div>
                                         <div class="column is-half has-text-right">
                                             <Link to={`/page/client/${id}/edit`} class="button is-warning is-fullwidth-mobile" disabled={client.status === 2}><FontAwesomeIcon className="fas" icon={faPencil} />&nbsp;Edit</Link>
@@ -256,4 +251,4 @@ function FirstDetail() {
     );
 }
 
-export default FirstDetail;
+export default SecondDetail;

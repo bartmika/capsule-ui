@@ -1,8 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import PhoneTextFormatter from "./EveryPage/PhoneTextFormatter";
-import DateTextFormatter from "./EveryPage/DateTextFormatter";
-import DateTimeTextFormatter from "./EveryPage/DateTimeTextFormatter";
+import PhoneTextFormatter from "../EveryPage/PhoneTextFormatter";
+import DateTextFormatter from "../EveryPage/DateTextFormatter";
+import DateTimeTextFormatter from "../EveryPage/DateTimeTextFormatter";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircle } from '@fortawesome/free-solid-svg-icons';
 
 
 function DataDisplayRowText(props) {
