@@ -4,6 +4,7 @@ import PhoneTextFormatter from "../EveryPage/PhoneTextFormatter";
 import DateTextFormatter from "../EveryPage/DateTextFormatter";
 import DateTimeTextFormatter from "../EveryPage/DateTimeTextFormatter";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import TextWithLineBreaksFormatter from "../EveryPage/TextWithLineBreaksFormatter";
 import { faCircle } from '@fortawesome/free-solid-svg-icons';
 
 
@@ -19,6 +20,9 @@ function DataDisplayRowText(props) {
                         <>
                         {type === "text" &&
                             value
+                        }
+                        {type === "text_with_linebreaks" &&
+                            <><TextWithLineBreaksFormatter text={value} /></>
                         }
                         {type === "email" &&
                             <Link to={`mailto:${value}`}>{value}</Link>

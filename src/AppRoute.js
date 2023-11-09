@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import { RecoilRoot } from 'recoil';
 
+import FirstAdd from "./Components/Page/FormView/First/Add";
 import SecondDetail from "./Components/Page/DetailView/Second/Detail";
 import FirstDetail from "./Components/Page/DetailView/First/Detail";
 import SecondList from "./Components/Page/ListView/Second/List";
@@ -45,6 +46,7 @@ function AppRoute() {
                             <section class="main-content columns is-fullheight">
                                 <Routes>
                                     {/* Pages. */}
+                                    <Route exact path="/page/add/first" element={<FirstAdd/>}/>
                                     <Route exact path="/page/detail/second/:id" element={<SecondDetail/>}/>
                                     <Route exact path="/page/detail/first/:id" element={<FirstDetail/>}/>
                                     <Route exact path="/page/list/second" element={<SecondList/>}/>

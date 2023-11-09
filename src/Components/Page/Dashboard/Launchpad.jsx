@@ -120,8 +120,7 @@ function DashboardLaunchpad() {
                                     Select from any of the following designs:
                                     <br />
                                     <br />
-                                    <i>Coming soon</i>
-                                    <Link hidden={true} to={"/page/list/first"}>First&nbsp;<FontAwesomeIcon className="fas" icon={faArrowRight} /></Link>
+                                    <Link to={"/page/add/first"}>First&nbsp;<FontAwesomeIcon className="fas" icon={faArrowRight} /></Link>
                                     <br />
                                     <br />
                                     <Link hidden={true} to={"/page/list/second"}>Second&nbsp;<FontAwesomeIcon className="fas" icon={faArrowRight} /></Link>

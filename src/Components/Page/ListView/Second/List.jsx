@@ -243,7 +243,7 @@ function SecondList() {
                                 <FontAwesomeIcon className="mdi" icon={faFilter} />&nbsp;Filter
                             </button>
                             &nbsp;
-                            <Link to={`/501`} class="button is-small is-primary is-fullwidth-mobile" type="button">
+                            <Link to={`/page/add/first`} class="button is-small is-primary is-fullwidth-mobile" type="button">
                                 <FontAwesomeIcon className="mdi" icon={faPlus} />&nbsp;New
                             </Link>
                         </div>

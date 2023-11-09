@@ -228,7 +228,7 @@ function FirstList() {
                                             title={`Add`}
                                             subtitle={`Add clients`}
                                             faIcon={faPlus}
-                                            url={`/501`}
+                                            url={`/page/add/first`}
                                             bgColour={`has-background-danger-dark`}
                                         />
                                     </div>

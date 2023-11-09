@@ -72,3 +72,23 @@ export function getClientDetailAPI(clientID, onSuccessCallback, onErrorCallback,
         onErrorCallback(errors);
     }).then(onDoneCallback);
 }
+
+export function postClientCreateAPI(decamelizedData, onSuccessCallback, onErrorCallback, onDoneCallback, onUnauthorizedCallback) {
+    const axios = getCustomAxios(onUnauthorizedCallback);
+
+    // Run the API POST call.
+    axios.post(CAPSULE_CLIENTS_API_ENDPOINT, decamelizedData).then((successResponse) => {
+        console.log(successResponse);
+        const responseData = successResponse.data;
+
+        // Snake-case from API to camel-case for React.
+        const data = camelizeKeys(responseData);
+
+        // Return the callback data.
+        onSuccessCallback(data);
+    }).catch( (exception) => {
+        console.log(exception);
+        let errors = camelizeKeys(exception);
+        onErrorCallback(errors);
+    }).then(onDoneCallback);
+}

@@ -51,7 +51,6 @@ function SecondDetail() {
     const [isFetching, setFetching] = useState(false);
     const [forceURL, setForceURL] = useState("");
     const [client, setClient] = useState({});
-    const [tabIndex, setTabIndex] = useState(1);
 
     ////
     //// Event handling.

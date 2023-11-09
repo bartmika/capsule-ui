@@ -209,7 +209,7 @@ function Login() {
                                         {/* Friendly message letting the user know the login credentials. */}
                                         <article class="message is-info">
                                             <div class="message-body">
-                                                <FontAwesomeIcon className="fas" icon={faBullhorn} />&nbsp;Log in using the email <i>"demo@capsule-ui.com "</i> and the password as <i>"secret"</i>.
+                                                <FontAwesomeIcon className="fas" icon={faBullhorn} />&nbsp;Log in using the email <i>"demo@capsule-ui.com"</i> and the password as <i>"secret"</i>.
                                             </div>
                                         </article>
 
