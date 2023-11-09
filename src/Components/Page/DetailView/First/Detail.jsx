@@ -25,6 +25,8 @@ import FormInputFieldWithButton from  "../../../Reusable/FormInputFieldWithButto
 import FormSelectField from  "../../../Reusable/FormSelectField";
 import FormDateField from "../../../Reusable/FormDateField";
 import DateTextFormatter from "../../../Reusable/EveryPage/DateTextFormatter";
+import PhoneTextFormatter from "../../../Reusable/EveryPage/PhoneTextFormatter";
+import EmailTextFormatter from "../../../Reusable/EveryPage/EmailTextFormatter";
 import { USER_ROLES,
     USER_STATUS_LIST_OPTIONS,
     USER_ROLE_LIST_OPTIONS,
@@ -159,7 +161,7 @@ function FirstDetail() {
                                 <p class="title is-4"><FontAwesomeIcon className="fas" icon={faTable} />&nbsp;Detail</p>
                             </div>
                             <div class="column has-text-right">
-                                <Link to={`/page/client/${id}/edit`} class="button is-small is-warning is-fullwidth-mobile" type="button" disabled={client.status === 2}>
+                                <Link to={`/501`} class="button is-small is-warning is-fullwidth-mobile" type="button" disabled={client.status === 2}>
                                     <FontAwesomeIcon className="mdi" icon={faPencil} />&nbsp;Edit
                                 </Link>
                             </div>
@@ -233,6 +235,28 @@ function FirstDetail() {
                                                     }
                                                 </td>
                                     		</tr>
+                                            <tr>
+                                    			<th class="has-background-light" style={{width: "30%"}}>Email:</th>
+                                    			<td>
+                                                    {client.email
+                                                        ?
+                                                        <EmailTextFormatter value={client.email} />
+                                                        :
+                                                        <>-</>
+                                                    }
+                                                </td>
+                                    		</tr>
+                                            <tr>
+                                    			<th class="has-background-light" style={{width: "30%"}}>Phone:</th>
+                                    			<td>
+                                                    {client.phone
+                                                        ?
+                                                        <PhoneTextFormatter value={client.phone} />
+                                                        :
+                                                        <>-</>
+                                                    }
+                                                </td>
+                                    		</tr>
                                         </tbody>
                                     </table>
 
@@ -241,7 +265,7 @@ function FirstDetail() {
                                             <Link class="button is-fullwidth-mobile" to={`/page/list/first`}><FontAwesomeIcon className="fas" icon={faArrowLeft} />&nbsp;Back to Clients</Link>
                                         </div>
                                         <div class="column is-half has-text-right">
-                                            <Link to={`/page/client/${id}/edit`} class="button is-warning is-fullwidth-mobile" disabled={client.status === 2}><FontAwesomeIcon className="fas" icon={faPencil} />&nbsp;Edit</Link>
+                                            <Link to={`/501`} class="button is-warning is-fullwidth-mobile" disabled={client.status === 2}><FontAwesomeIcon className="fas" icon={faPencil} />&nbsp;Edit</Link>
                                         </div>
                                     </div>
 
