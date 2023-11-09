@@ -123,7 +123,7 @@ function DashboardLaunchpad() {
                                     <Link to={"/page/add/first"}>First&nbsp;<FontAwesomeIcon className="fas" icon={faArrowRight} /></Link>
                                     <br />
                                     <br />
-                                    <Link hidden={true} to={"/page/list/second"}>Second&nbsp;<FontAwesomeIcon className="fas" icon={faArrowRight} /></Link>
+                                    <Link to={"/page/add/second"}>Second&nbsp;<FontAwesomeIcon className="fas" icon={faArrowRight} /></Link>
                                 </p>
                             </div>
                         </section>
