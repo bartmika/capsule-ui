@@ -13,10 +13,6 @@ import { postClientCreateAPI} from "../../../../API/Client";
 import {
     topAlertMessageState,
     topAlertStatusState,
-    currentUserState,
-    clientFilterStatusState,
-    clientFilterTypeState,
-    clientFilterSortState
 } from "../../../../AppState";
 
 import ErrorBox from "../../../Reusable/EveryPage/ErrorBox";
@@ -33,19 +29,6 @@ import FormRadioField from "../../../Reusable/FormRadioField";
 import FormMultiSelectField from "../../../Reusable/FormMultiSelectField";
 import FormCheckboxField from "../../../Reusable/FormCheckboxField";
 import FormPhoneField from "../../../Reusable/FormPhoneField";
-
-
-import { USER_ROLES,
-    USER_STATUS_LIST_OPTIONS,
-    USER_ROLE_LIST_OPTIONS,
-    CLIENT_SORT_OPTIONS,
-    CLIENT_STATUS_FILTER_OPTIONS,
-    CLIENT_TYPE_OF_FILTER_OPTIONS
-} from "../../../../Constants/FieldOptions";
-import {
-    DEFAULT_CLIENT_LIST_SORT_BY_VALUE,
-    DEFAULT_CLIENT_STATUS_FILTER_OPTION
-} from "../../../../Constants/App";
 
 
 function FirstAdd() {
@@ -77,7 +60,7 @@ function FirstAdd() {
     const [lastName, setLastName] = useState("");
     const [isOkToText, setIsOkToText] = useState("");
     const [isOkToEmail, setIsOkToEmail] = useState("");
-    const [country] = useState("");
+    const [country] = useState("Canada");
 
     ////
     //// Event handling.
